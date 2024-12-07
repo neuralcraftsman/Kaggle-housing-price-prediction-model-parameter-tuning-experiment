@@ -322,7 +322,8 @@ def train_and_pred(train_features, test_features, train_labels, test_data,
 3. **训练过程中的 RMSE 对比**
 
    - 绘图对比损失函数的训练曲线，比较它们的变化趋势。
-  ![alt text](MSE&MAE.png)
+   ![MSE MAE](https://github.com/user-attachments/assets/50ee97bf-287d-4cd4-b3a1-1fd7b85b3919)
+
 
    从图中可以看出，使用 MSE 损失函数的模型在训练初期 RMSE 下降较快，最终达到较低的 RMSE 值。而使用 MAE 损失函数的模型虽然 RMSE 也在下降，但下降速度较慢，且最终的 RMSE 值较高。
 
@@ -363,7 +364,7 @@ def train_and_pred(train_features, test_features, train_labels, test_data,
 - **学习率191**：最终训练RMSE为0.119173。
 
 - 对比学习率下的RMSE对比
-![alt text](compare_Learing_rate.png)
+![compare_Learing_rate](https://github.com/user-attachments/assets/488cd71f-1bde-41c8-9b7c-cf31ba1078e9)
 
 #### 学习率结论
 
@@ -385,7 +386,8 @@ def train_and_pred(train_features, test_features, train_labels, test_data,
 - **SGD 优化算法**：最终训练 RMSE 为 5.665266036987305。
 
 - 绘图对比
-  ![alt text](Adam&SGD.png)
+  ![Adam SGD](https://github.com/user-attachments/assets/f67413bc-87cf-44ae-9429-5deec82c655e)
+
 
 从实验结果可以看出，Adam 优化算法在训练过程中表现更好，最终的训练 RMSE 较低。而 SGD 优化算法虽然也能有效训练模型，但最终的训练 RMSE 较高。
 
@@ -412,7 +414,8 @@ def train_and_pred(train_features, test_features, train_labels, test_data,
 
 - 结果
 
-  ![alt text](initialization_method.png)
+  ![initialization_method](https://github.com/user-attachments/assets/d4636299-cc72-487b-944f-fe13228cc339)
+
 
 - **方法说明**：使用均值为0，标准差为0.01的正态分布来初始化网络的权重。这种方法在浅层神经网络中较为常见，但可能会导致较深网络中的梯度消失或爆炸问题。
 - **结果**：在100轮训练后，**训练RMSE**为 **5.1571**。这一结果表明，正态分布初始化方法能够较好地进行训练，但在更复杂的网络或数据集上可能需要进一步调整标准差来获得更好的效果。
@@ -465,11 +468,15 @@ def train_and_pred(train_features, test_features, train_labels, test_data,
 
 - **结果图片**
 
-  ![alt text](compare_num_epoch.png)
+  ![compare_num_epoch](https://github.com/user-attachments/assets/dbb23664-e353-428e-959a-014f3550dc2d)
+
+
 
 - **放大图片**
 
-  ![alt text](compare_num_epoch_zoomin.png)
+  ![compare_num_epoch_zoomin](https://github.com/user-attachments/assets/e82567a8-be75-4782-92d9-bf65ac36f38a)
+
+
 
 从上述图表中可以看出，随着训练轮数的增加，模型的训练RMSE逐渐下降，但在经过一定轮数后（如100轮），RMSE的变化趋于平缓，继续增加训练轮数对RMSE的降低效果并不明显。这表明模型在经过一定数量的训练后已经基本收敛，进一步增加训练轮数对模型性能的提升有限。
 
@@ -557,12 +564,14 @@ evaluate_different_k_values(train_features, train_labels, num_epochs, lr, weight
 
 - **RMSE结果**
 
-  ![K=100](different_k_value.png)
+  ![different_k_value](https://github.com/user-attachments/assets/877e5a0a-4061-47c4-ba04-e7c57b80824e)
+
 
 - **K=2到10的RMSE变化**
   本来想画一下2到100的，但是发现，电脑没有显卡，计算速度很慢，所以就只画了2到10的。
 
-  ![K=2~10](k_fold_rmse_10.png)
+  ![k_fold_rmse_10](https://github.com/user-attachments/assets/39394702-f092-49f0-9e42-fbcc1a536870)
+
 
 - K值与RMSE的关系：
 
@@ -630,7 +639,8 @@ Raw train rmse: 0.5713464021682739
 
 下图展示了训练过程中，**数据预处理**和**未做数据预处理**的RMSE对比曲线。
 
-![对比](compare_data_Pretreatment&no_pretreatment.png)
+![compare_data_Pretreatment no_pretreatment](https://github.com/user-attachments/assets/4241c245-8305-43c2-8150-97ae51ea8688)
+
 
 在图中，蓝色曲线表示经过数据预处理后的训练过程，而红色曲线则表示未做数据预处理的情况。可以观察到，经过预处理的模型在训练初期的RMSE就显著较低，并且随着训练的进行，RMSE逐渐降低并趋于稳定。相反，未做预处理的模型RMSE一直较高，并且收敛速度明显较慢。
 
